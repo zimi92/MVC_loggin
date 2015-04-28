@@ -16,14 +16,21 @@ import com.zimi.service.LoginService;
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
+	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String userId=null,userPass = null;
+		String userId,userPass ;
 		userId = request.getParameter("user_id");
-		userId = request.getParameter("user_pass");
+		userPass = request.getParameter("user_pass");
 		
 		LoginService loginServce = new LoginService();
 		boolean auth_result = loginServce.authenticate(userId, userPass);
+		if(auth_result){
+			response.sendRedirect("logged.jsp");
+		}else{
+			response.sendRedirect("login.jsp");
+		}
 	}
 
 }

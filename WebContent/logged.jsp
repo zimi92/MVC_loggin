@@ -7,12 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="LoginServlet" method="POST">
-<table>
-	<tr><td>Login: <td><input type="text" name="user_id"/></td></tr>
-	<tr><td>Password:<td> <input type="password" name="user_pass"/></td></tr>
-	<tr><td><input type="submit" value="Sign in"/></td></tr>
-</table>
-</form>
+	<h1>LOGGING SUCCES</h1>
 </body>
 </html>
